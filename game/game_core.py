@@ -2,6 +2,7 @@ import numpy as np
 import random
 import os
 import sys
+from game_graphic import generate_image
 
 class Game:
     def __init__(self):
@@ -161,9 +162,12 @@ def get_key():
 def main():
     game = Game()
 
+    test_tick = 0
+
     while True:
         game.display()
-
+        generate_image(game.field, game.size, f'{test_tick}.png')
+        test_tick += 1
         if game.game_over() or game.win():
             print("\nНажмите любую клавишу для выхода...")
             get_key()
