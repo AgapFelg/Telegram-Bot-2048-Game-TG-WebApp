@@ -49,9 +49,10 @@ class Game:
             self.field = np.fliplr(self.field)
             # обратное транспонирование
             self.field = self.field.T
-
+        print(1)
         # если поле изменилось (произошло какое-либо движение), то добавляем новую ячейку
         if not np.array_equal(shot_field, self.field):
+            print(2)
             self.add_new_tile()
             return True
         return False

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, ARRAY
+from sqlalchemy import create_engine, Column, Integer, String, ARRAY, BigInteger
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from config import Config
@@ -10,7 +10,7 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = 'users_game'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(BigInteger, primary_key=True)
     username = Column(String)
     score = Column(Integer)
     field = Column(ARRAY(Integer))
