@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2048</h1>
+            <div class="scores">
+                <div class="score-box">
+                    <div class="score-label">Счет</div>
+                    <span id="score">0</span>
+                </div>
+                <div class="score-box">
+                    <div class="score-label">Рекорд</div>
+                    <span id="best-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-controls">
+            <button id="restart" class="btn">Новая игра</button>
+            <button id="theme-toggle" class="btn">Цвет: Ч/Б</button>
+        </div>
+
+        <div class="game-container">
+            <div id="game-board" class="game-board"></div>
+            <div id="game-over" class="game-message hidden">
+                <p>Гейм овер</p>
+                <button class="btn try-again">Рестарт</button>
+            </div>
+            <div id="game-won" class="game-message hidden">
+                <p>Победа</p>
+                <button class="btn continue">Дальше</button>
+            </div>
+        </div>
+
+        <div class="desktop-controls">
+            <button id="up" class="control-btn">↑</button>
+            <div>
+                <button id="left" class="control-btn">←</button>
+                <button id="right" class="control-btn">→</button>
+            </div>
+            <button id="down" class="control-btn">↓</button>
+        </div>
+
+        <div class="github">
+            <p>СЮДА ВСТАВИТЬ ССЫЛКУ НА МОЙ ГИТХАБ</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
