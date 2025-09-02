@@ -15,7 +15,8 @@ def game_keyboard():
         InlineKeyboardButton(text='⬇️', callback_data='move_down')
     ]
     control_row_4 = [
-        InlineKeyboardButton(text='🔄', callback_data='restart')
+        InlineKeyboardButton(text='🔄', callback_data='restart'),
+        InlineKeyboardButton(text='🎨', callback_data='change_theme')
     ]
 
     buttons.append(control_row_1)

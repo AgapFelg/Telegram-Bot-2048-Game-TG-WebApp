@@ -9,6 +9,8 @@ class Game:
         self.size = 4
         self.field = np.zeros((self.size, self.size), dtype=int)
         self.score = 0
+        self.game_won = False
+        self.game_over = False
 
     def move(self, direction):
         # 1 - вверх

@@ -137,6 +137,26 @@ h1 {
 .classic .tile-1024 { background-color: #edc53f; color: #f9f6f2; box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
 .classic .tile-2048 { background-color: #edc22e; color: #f9f6f2; box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
 
+.grid-cell:nth-child(1) { top: 15px; left: 15px; width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(2) { top: 15px; left: calc(25% + 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(3) { top: 15px; left: calc(50% + 0px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(4) { top: 15px; left: calc(75% - 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+
+.grid-cell:nth-child(5) { top: calc(25% + 7.5px); left: 15px; width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(6) { top: calc(25% + 7.5px); left: calc(25% + 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(7) { top: calc(25% + 7.5px); left: calc(50% + 0px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(8) { top: calc(25% + 7.5px); left: calc(75% - 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+
+.grid-cell:nth-child(9) { top: calc(50% + 0px); left: 15px; width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(10) { top: calc(50% + 0px); left: calc(25% + 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(11) { top: calc(50% + 0px); left: calc(50% + 0px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(12) { top: calc(50% + 0px); left: calc(75% - 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+
+.grid-cell:nth-child(13) { top: calc(75% - 7.5px); left: 15px; width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(14) { top: calc(75% - 7.5px); left: calc(25% + 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(15) { top: calc(75% - 7.5px); left: calc(50% + 0px); width: calc(25% - 15px); height: calc(25% - 15px); }
+.grid-cell:nth-child(16) { top: calc(75% - 7.5px); left: calc(75% - 7.5px); width: calc(25% - 15px); height: calc(25% - 15px); }
+
 .classic .game-board {
     background-color: #bbada0;
 }
