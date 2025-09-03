@@ -20,6 +20,10 @@
             align-items: center;
             padding: 20px;
             min-height: 100vh;
+            /* Добавляем для предотвращения скролла при свайпах */
+            overflow: hidden;
+            width: 100%;
+            position: fixed;
         }
 
         .container {
@@ -99,6 +103,8 @@
             padding: 15px;
             margin-bottom: 25px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            /* Добавляем для предотвращения скролла при свайпах */
+            touch-action: none;
         }
 
         .grid {
@@ -617,6 +623,14 @@
 
                 handleSwipe();
             }, { passive: true });
+
+            // Добавляем обработчик для предотвращения скролла при свайпах
+            document.addEventListener('touchmove', function(event) {
+                // Проверяем, происходит ли касание внутри игровой области
+                if (event.target.closest('.game-container')) {
+                    event.preventDefault();
+                }
+            }, { passive: false });
 
             function handleSwipe() {
                 const dx = touchEndX - touchStartX;
