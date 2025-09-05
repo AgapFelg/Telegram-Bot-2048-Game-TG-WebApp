@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- объявление типа документа как html5 -->
+<html lang="ru">
+<!-- открывающий тег html с указанием языка - русский -->
+
+<head>
+    <!-- секция метаданных и заголовка страницы -->
+    <meta charset="UTF-8">
+    <!-- указание кодировки символов utf-8 для поддержки кириллицы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- настройка viewport для корректного отображения на мобильных устройствах -->
+    <title>2048</title>
+    <!-- заголовок страницы, отображается во вкладке браузера -->
+    <link rel="stylesheet" href="style.css">
+    <!-- подключение внешней таблицы стилей -->
+</head>
+
+<body>
+    <!-- тело документа, видимое содержимое страницы -->
+    <div class="container">
+        <!-- основной контейнер для центрирования содержимого -->
+
+        <header>
+            <!-- шапка с заголовком и блоками счета -->
+            <h1>2048</h1>
+            <!-- главный заголовок игры -->
+            <div class="scores">
+                <!-- контейнер для блоков счета -->
+                <div class="score-box">
+                    <!-- блок текущего счета -->
+                    <div class="score-title">Счет</div>
+                    <!-- заголовок блока -->
+                    <div class="score-value" id="score">0</div>
+                    <!-- значение счета с id для javascript -->
+                </div>
+                <div class="score-box">
+                    <!-- блок рекорда -->
+                    <div class="score-title">Рекорд</div>
+                    <!-- заголовок блока -->
+                    <div class="score-value" id="best-score">0</div>
+                    <!-- значение рекорда с id для javascript -->
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <!-- панель управления с кнопками -->
+            <button id="restart-btn">Новая катка</button>
+            <!-- кнопка начала новой игры с id для javascript -->
+            <button id="theme-btn">Сменить тему</button>
+            <!-- кнопка смены темы с id для javascript -->
+        </div>
+
+        <div class="game-container">
+            <!-- контейнер игрового поля -->
+            <div class="grid">
+                <!-- сетка из 16 пустых ячеек (4x4) -->
+                <div class="grid-cell"></div>
+                <!-- одна ячейка сетки -->
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+
+            <div class="tile-container">
+                <!-- контейнер для плиток (будет заполняться через javascript) -->
+            </div>
+
+            <div class="game-message">
+                <!-- сообщение о победе/поражении (изначально скрыто) -->
+                <p></p>
+                <!-- текст сообщения (будет заполняться через javascript) -->
+                <div>
+                    <button>Еще трай</button>
+                    <!-- кнопка для повторной игры -->
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <!-- панель управления для мобильных устройств -->
+            <button class="up-btn">↑</button>
+            <!-- кнопка движения вверх -->
+            <button class="left-btn">←</button>
+            <!-- кнопка движения влево -->
+            <button class="right-btn">→</button>
+            <!-- кнопка движения вправо -->
+            <button class="down-btn">↓</button>
+            <!-- кнопка движения вниз -->
+        </div>
+
+        <div class="instructions">
+            <!-- блок с инструкциями к игре -->
+            <p>Используйте стрелки на клавиатуре или кнопки ниже для перемещения плиток.<br>
+                <!-- текст инструкции с переносом строки -->
+                Объединяйте одинаковые числа, чтобы получить плитку 2048!<br>
+                    github: https://github.com/AgapFelg</p>
+            <!-- продолжение инструкции -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- подключение внешнего javascript-файла -->
+</body>
+<!-- закрывающий тег тела документа -->
+
+</html>
+<!-- закрывающий тег html документа -->
