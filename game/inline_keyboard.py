@@ -1,6 +1,8 @@
 # импорт классов для создания inline-клавиатуры из aiogram
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+from config import Config
 
+config = Config()
 
 # функция создания игровой клавиатуры
 def game_keyboard():
@@ -35,11 +37,17 @@ def game_keyboard():
         # создание кнопки с иконкой палитры и callback_data 'change_theme'
     ]
 
+    # создание пятой строки с кнопкой входа в веб приложение
+    control_row_5 = [
+        InlineKeyboardButton(text='web_app', web_app=WebAppInfo(url=config.web_app_url))
+    ]
+
     # добавление всех строк кнопок в основной список
     buttons.append(control_row_1)
     buttons.append(control_row_2)
     buttons.append(control_row_3)
     buttons.append(control_row_4)
+    buttons.append(control_row_5)
 
     # создание и возврат клавиатуры на основе списка кнопок
     return InlineKeyboardMarkup(inline_keyboard=buttons)

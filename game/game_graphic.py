@@ -1,5 +1,11 @@
 # импорт необходимых модулей из библиотеки PIL (Python Imaging Library)
 from PIL import Image, ImageDraw, ImageFont
+# импорт библиотеки для работы с ОС (в данном случае - для работы с файловой системой)
+import os
+
+# создание папки uploads, если ее не существует
+if not os.path.exists('uploads'):
+    os.makedirs('uploads')
 
 # функция для генерации изображения игрового поля в черно-белой теме
 def generate_image(board, size, filename):
@@ -107,8 +113,10 @@ def generate_image(board, size, filename):
                 else:
                     draw.text((text_x, text_y), text, fill=text_color, font=font)
 
+    # формирование пути для сохранения файла
+    filepath = os.path.join('uploads', filename)
     # сохранение изображения в файл
-    img.save(filename, 'PNG')
+    img.save(filepath, 'PNG')
     return img
 
 # функция для генерации изображения игрового поля в классической теме
@@ -217,6 +225,8 @@ def generate_image_classic(board, size, filename):
                 else:
                     draw.text((text_x, text_y), text, fill=text_color, font=font)
 
+    # формирование пути для сохранения файла
+    filepath = os.path.join('uploads', filename)
     # сохранение изображения в файл
-    img.save(filename, 'PNG')
+    img.save(filepath, 'PNG')
     return img

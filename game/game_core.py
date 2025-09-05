@@ -4,11 +4,6 @@ import numpy as np
 import random
 # импорт модуля для работы с операционной системой
 import os
-# импорт модуля для работы с системными функциями
-import sys
-# импорт функции генерации изображения из другого модуля
-from game_graphic import generate_image
-
 
 # класс игры 2048
 class Game:
@@ -19,10 +14,6 @@ class Game:
         self.field = np.zeros((self.size, self.size), dtype=int)
         # начальный счет
         self.score = 0
-        # флаг победы
-        self.game_won = False
-        # флаг окончания игры
-        self.game_over = False
 
     # функция обработки движения
     def move(self, direction):
@@ -178,17 +169,12 @@ def get_key():
 def main():
     # создание экземпляра игры
     game = Game()
-    # счетчик для тестирования (сохранения изображений)
-    test_tick = 0
-
+    game.add_new_tile()
+    game.add_new_tile()
     # основной игровой цикл
     while True:
         # отображение игрового поля в консоли
         game.display()
-        # генерация и сохранение изображения игрового поля
-        generate_image(game.field, game.size, f'{test_tick}.png')
-        # увеличение счетчика
-        test_tick += 1
         # проверка условий окончания игры
         if game.game_over() or game.win():
             print("\nНажмите любую клавишу для выхода...")
@@ -217,8 +203,13 @@ def main():
         elif key == 'r':
             # перезапуск игры
             game = Game()
+            game.add_new_tile()
+            game.add_new_tile()
 
 
 # точка входа в программу
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(e)

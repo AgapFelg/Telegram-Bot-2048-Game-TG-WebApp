@@ -14,3 +14,5 @@ class Config:
         self.bot_token = env('BOT_TOKEN')
         # читает строку подключения к БД
         self.database_uri = env('DATABASE_URI')
+        # читает url веб аппа
+        self.web_app_url = env('WEB_APP_URL')

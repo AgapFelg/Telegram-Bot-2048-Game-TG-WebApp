@@ -217,7 +217,7 @@ async def start(message):
             caption += "\n💀💀💀ГГ! СЛИТ!💀💀💀"
 
         # создание объекта файла изображения
-        photo = FSInputFile(path=os.path.join(f'{message.from_user.id}.png'))
+        photo = FSInputFile(path=os.path.join('uploads', f'{message.from_user.id}.png'))
         # отправка изображения с клавиатурой
         await message.answer_photo(photo=photo, caption=caption, reply_markup=keyboard)
     finally:
@@ -244,7 +244,7 @@ async def chat_move_up(callback_query: CallbackQuery):
         caption += "\n💀💀💀ГГ! СЛИТ!💀💀💀"
 
     # создание объекта файла изображения
-    photo = FSInputFile(path=os.path.join(f'{callback_query.from_user.id}.png'))
+    photo = FSInputFile(path=os.path.join('uploads', f'{callback_query.from_user.id}.png'))
     # редактирование сообщения с новым изображением
     await callback_query.message.edit_media(
         media=InputMediaPhoto(
@@ -269,7 +269,7 @@ async def chat_move_right(callback_query: CallbackQuery):
     elif game_state == "game_over":
         caption += "\n💀💀💀ГГ! СЛИТ!💀💀💀"
 
-    photo = FSInputFile(path=os.path.join(f'{callback_query.from_user.id}.png'))
+    photo = FSInputFile(path=os.path.join('uploads', f'{callback_query.from_user.id}.png'))
     await callback_query.message.edit_media(
         media=InputMediaPhoto(
             media=photo,
@@ -293,7 +293,7 @@ async def chat_move_left(callback_query: CallbackQuery):
     elif game_state == "game_over":
         caption += "\n💀💀💀ГГ! СЛИТ!💀💀💀"
 
-    photo = FSInputFile(path=os.path.join(f'{callback_query.from_user.id}.png'))
+    photo = FSInputFile(path=os.path.join('uploads', f'{callback_query.from_user.id}.png'))
     await callback_query.message.edit_media(
         media=InputMediaPhoto(
             media=photo,
@@ -317,7 +317,7 @@ async def chat_move_down(callback_query: CallbackQuery):
     elif game_state == "game_over":
         caption += "\n💀💀💀ГГ! СЛИТ!💀💀💀"
 
-    photo = FSInputFile(path=os.path.join(f'{callback_query.from_user.id}.png'))
+    photo = FSInputFile(path=os.path.join('uploads', f'{callback_query.from_user.id}.png'))
     await callback_query.message.edit_media(
         media=InputMediaPhoto(
             media=photo,
@@ -339,7 +339,7 @@ async def chat_restart(callback_query: CallbackQuery):
     theme_name = "классическая" if theme == 'classic' else "черно-белая"
     caption = f'Score: {game.score}\nHigh Score: {high_score}\nТема: {theme_name}\nИгра перезапущена!'
 
-    photo = FSInputFile(path=os.path.join(f'{callback_query.from_user.id}.png'))
+    photo = FSInputFile(path=os.path.join('uploads', f'{callback_query.from_user.id}.png'))
     await callback_query.message.edit_media(
         media=InputMediaPhoto(
             media=photo,
@@ -377,7 +377,7 @@ async def chat_change_theme(callback_query: CallbackQuery):
 
         caption = f'Score: {user.score}\nHigh Score: {user.height_score}\nТема: {theme_name}'
 
-        photo = FSInputFile(path=os.path.join(f'{callback_query.from_user.id}.png'))
+        photo = FSInputFile(path=os.path.join('uploads', f'{callback_query.from_user.id}.png'))
         # обновление сообщения с новой темой
         await callback_query.message.edit_media(
             media=InputMediaPhoto(
