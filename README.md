@@ -1,11 +1,10 @@
 # 🎮 Telegram-Bot-2048-Game-TG-WebApp
 
-https://img.shields.io/badge/Python-3.10%252B-blue?logo=python
-https://img.shields.io/badge/Aiogram-3.x-blue?logo=telegram
-https://img.shields.io/badge/PostgreSQL-Supported-blue?logo=postgresql
-https://img.shields.io/badge/SQLAlchemy-ORM-red?logo=sqlalchemy
-https://img.shields.io/badge/Pillow-Image_Processing-green
-https://img.shields.io/badge/License-MIT-yellow
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Aiogram](https://img.shields.io/badge/Aiogram-3.x-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-blue)
+![SQLite](https://img.shields.io/badge/SQLite-Supported-blue)
+![Pillow](https://img.shields.io/badge/Pillow-Image_Processing-green)
 
 Полнофункциональный клон классической игры 2048, реализованный в виде умного Telegram-бота с интерактивной веб-версией. Проект демонстрирует навыки full-stack разработки: от backend-логики и работы с базами данных до создания frontend-интерфейса и интеграции с Telegram API.
 
